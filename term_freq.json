@@ -1,0 +1,220 @@
+{
+  "axes": [
+    {
+      "scale": "x",
+      "type": "x"
+    },
+    {
+      "scale": "y",
+      "type": "y"
+    }
+  ],
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {
+          "col": "data",
+          "idx": "ago",
+          "val": 4253
+        },
+        {
+          "col": "data",
+          "idx": "year",
+          "val": 4215
+        },
+        {
+          "col": "data",
+          "idx": "We",
+          "val": 3692
+        },
+        {
+          "col": "data",
+          "idx": "remember",
+          "val": 2767
+        },
+        {
+          "col": "data",
+          "idx": "today",
+          "val": 2370
+        },
+        {
+          "col": "data",
+          "idx": "forget",
+          "val": 2319
+        },
+        {
+          "col": "data",
+          "idx": "lost",
+          "val": 2089
+        },
+        {
+          "col": "data",
+          "idx": "one",
+          "val": 1911
+        },
+        {
+          "col": "data",
+          "idx": "Orlando",
+          "val": 1848
+        },
+        {
+          "col": "data",
+          "idx": "never",
+          "val": 1846
+        },
+        {
+          "col": "data",
+          "idx": "taken",
+          "val": 1745
+        },
+        {
+          "col": "data",
+          "idx": "Pulse",
+          "val": 1727
+        },
+        {
+          "col": "data",
+          "idx": "honor",
+          "val": 1687
+        },
+        {
+          "col": "data",
+          "idx": "1",
+          "val": 1683
+        },
+        {
+          "col": "data",
+          "idx": "amp",
+          "val": 1628
+        },
+        {
+          "col": "data",
+          "idx": "lives",
+          "val": 1626
+        },
+        {
+          "col": "data",
+          "idx": "us",
+          "val": 1618
+        },
+        {
+          "col": "data",
+          "idx": "Today",
+          "val": 1613
+        },
+        {
+          "col": "data",
+          "idx": "souls",
+          "val": 1364
+        },
+        {
+          "col": "data",
+          "idx": "always",
+          "val": 1235
+        }
+      ]
+    },
+    {
+      "name": "stats",
+      "source": "table",
+      "transform": [
+        {
+          "keys": [
+            "data.idx"
+          ],
+          "type": "facet"
+        },
+        {
+          "type": "stats",
+          "value": "data.val"
+        }
+      ]
+    }
+  ],
+  "height": 500,
+  "legends": [],
+  "marks": [
+    {
+      "from": {
+        "data": "table",
+        "transform": [
+          {
+            "keys": [
+              "data.col"
+            ],
+            "type": "facet"
+          },
+          {
+            "height": "data.val",
+            "point": "data.idx",
+            "type": "stack"
+          }
+        ]
+      },
+      "marks": [
+        {
+          "properties": {
+            "enter": {
+              "fill": {
+                "field": "data.col",
+                "scale": "color"
+              },
+              "width": {
+                "band": true,
+                "offset": -1,
+                "scale": "x"
+              },
+              "x": {
+                "field": "data.idx",
+                "scale": "x"
+              },
+              "y": {
+                "field": "y",
+                "scale": "y"
+              },
+              "y2": {
+                "field": "y2",
+                "scale": "y"
+              }
+            }
+          },
+          "type": "rect"
+        }
+      ],
+      "type": "group"
+    }
+  ],
+  "padding": "auto",
+  "scales": [
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.idx"
+      },
+      "name": "x",
+      "range": "width",
+      "type": "ordinal",
+      "zero": false
+    },
+    {
+      "domain": {
+        "data": "stats",
+        "field": "sum"
+      },
+      "name": "y",
+      "nice": true,
+      "range": "height"
+    },
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.col"
+      },
+      "name": "color",
+      "range": "category20",
+      "type": "ordinal"
+    }
+  ],
+  "width": 960
+}
